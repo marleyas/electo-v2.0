@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electo</title>
+	<link rel="stylesheet" href="bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css">  
+	<link rel="stylesheet" href="css/bootstrap-switch.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<style>
+	
+        #logo-img {
+            width:100px;
+            height: 30px;
+        }
+		
+        #menu-toggle {
+            position: absolute;
+            padding: 16px 5px;
+            color: #ffffff;
+        }
+		
+		.campaign-header {
+		  color: #333;
+		  font-size: 20px;
+		  
+		}
+		
+		.form-control {
+			background-color: #f9f9f9;
+		}
+        
+	</style>
+</head>
+<body>    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>              
+                <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-ellipsis-h"></i></a>              
+              <a class="navbar-brand" href="/dashboard.html" style="padding: 10px; margin-left: 30px;"><img id="logo-img" src="/images/logo.svg" /></a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">				
+				<li class="dropdown menu-large">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+					
+					<ul class="dropdown-menu megamenu row">
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Tarefas</li>
+								<li><a href="#">Cadastrar novo Cidadão</a></li>                    
+								<li><a href="#">Cadastrar nova Instituição</a></li>
+								<li><a href="#">Cadastrar nova Demanda</a></li>
+								<li><a href="#">Criar novo Evento</a></li>
+								<li><a href="#">Enviar Email</a></li>
+								<li><a href="#">Enviar SMS</a></li>
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Cadastros</li>
+								<li><a href="#" class="nav-child">Cidadãos</a></li>
+								<li><a href="#">Lideranças</a></li>
+								<li><a href="#">Instituições</a></li>                    
+								<li class="divider"></li>
+								<li><a href="#">Segmentos e Grupos</a></li>							
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Gabinete</li>
+								<li><a href="#" class="nav-child">Demandas dos Cidadãos</a></li>
+								<li><a href="#">Tarefas internas</a></li> 
+								<li><a href="#">Minha Equipe</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Categorias de Demandas</a></li>								
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Comunicação</li>
+								<li><a href="#" class="nav-child">Agenda de Eventos</a></li>
+								<li><a href="#">Mural de recados</a></li>
+								<li><a href="#">Aniversariantes</a></li> 
+								<li><a href="#">Email</a></li>
+								<li><a href="#">Mensagens SMS</a></li>							
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Relatórios</li>
+								<li><a href="#" class="nav-child">Estatísticas dos Cidadãos</a></li>
+								<li><a href="#">Demandas dos Cidadãos</a></li>
+								<li><a href="#">SMS/Emails enviados</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Controle de acesso</a></li>
+								<li><a href="#">Auditoria</a></li> 								
+							</ul>
+						</li>
+						<li class="col-sm-2">
+							<ul>
+								<li class="dropdown-header">Outros</li>
+								<li><a href="#">Pesquisas de opinião</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Duplicidade de Cadastros</a></li>
+								<li><a href="#">Importação de Cidadãos</a></li>
+								<li class="divider"></li>
+								<li><a href="ajuda.html" target="_new">Ajuda do Electo <span class="label bg-success">Novo</span></a></li>
+							</ul>
+						</li>
+					</ul>
+					
+				</li>				
+
+			</ul>
+			
+			
+			
+			
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control input-sm" placeholder="Localizar" style="margin-top:6px; width:220px">
+				</div>
+				<button type="submit" class="btn btn-default btn-sm" style="margin-top:6px">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#"><i class="fa fa-fw fa-bell-o"></i></a></li>
+					<li class="dropdown"><a href="ajuda.html"><i class="fa fa-fw fa-question-circle"></i></a></li>
+					<li class="dropdown" style="margin-right:20px">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding: 10px;">
+							<img src="images/profile.jpg" width="30" height="30">
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Editar Perfil</a></li>
+							<li><a href="#">Minha conta</a></li>                                      
+							<li class="divider"></li>
+							<li><a href="#">Sair</a></li>
+						</ul>
+					</li> 
+				</ul>
+            </div>
+        </div>
+    </nav>
+    
+   
+   
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+			<div style="background-color: white; padding-top:20px;padding-bottom:20px;padding-left:10px;">
+				<p class="campaign-header"> Campanha atual <a href="#"><i class="fa fa-gear pull-right"></i></a></p>
+				<img src="images/medium_marley.jpg">
+				<p>Marley Adriano 54333<br/>
+				Vereador PPL</p>			
+			</div>            
+            <div class="list-group">
+                <a href="/cidadaos.html" class="list-group-item">Cidadãos <span class="badge">1380</span></a>
+                <a href="#" class="list-group-item">Lideranças <span class="badge">45</span></a>
+                <a href="#" class="list-group-item">Instituições <span class="badge">22</span></a>
+				<a href="/cidadaos-novo.html" class="list-group-item active">Cadastrar novo Cidadão</i></a>
+				<a href="#" class="list-group-item">Cadastrar nova Instituição</i></a>
+				<a href="#" class="list-group-item">Cadastrar nova Demanda</i></a>				
+				<a href="#" class="list-group-item">Criar novo evento</i></a>
+				<a href="#" class="list-group-item">Enviar E-mail</i></a>
+				<a href="#" class="list-group-item">Enviar SMS</i></a>
+            </div>           
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 col-lg-12">
+						<ul class="breadcrumb">
+							<li><a href="/dashboard.html">Dashboard</a>
+							<li><a href="#">Cadastros</a>
+							<li><a href="/cidadaos.html">Cidadãos</a>							
+						</ul>
+						<h2><i class="fa fa-fw fa-user-plus"></i> Novo Cidadão</h2>  
+					</div>                
+				</div>                    				
+                                
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+						<div>
+
+						  <!-- Nav tabs -->
+						  <ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Dados principais</a></li>
+							<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Núcleo de relacionamento</a></li>
+							<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Dados sociais</a></li>
+							<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Memória política</a></li>
+						  </ul>
+
+						  <!-- Tab panes -->
+						  <div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="home">
+								<div class="container-fluid">
+									<div class="row" style="margin-top:10px;">
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Tratamento</label>
+													<select class="form-control">
+														<option>Ilmo. Sr.</option>
+													</select>																										
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Nome</label>													
+													<input type="text" class="form-control" placeholder="Nome" required>																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Status do voto</label>													
+													<select class="form-control">
+														<option>Provavél</option>
+													</select>
+																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Liderança?</label>													
+												<div class="checkbox">
+												  <label>
+													<input type="checkbox" class="bootstrap-switch" value="S">
+												  </label>
+												</div>																										
+											</div>											
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label style="display:block">Sexo</label>
+												<label class="radio-inline">
+												  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Feminino
+												</label>
+												<label class="radio-inline">
+												  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Masculino
+												</label>																										
+											</div>
+										</div>
+										<div class="col-md-3 col-lg-3">
+											<div class="form-group">									
+												<label>Apelido</label>													
+													<input type="text" class="form-control" placeholder="Apelido" >																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Data de nascimento</label>													
+													<input type="text" class="form-control" placeholder="dd/mm/aaaa" >																										
+											</div>
+										</div>
+										<div class="col-md-3 col-lg-3">
+											<div class="form-group">									
+												<label>Estado civil</label>													
+													<select class="form-control">
+														<option>Solteiro</option>
+													</select>																										
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Grupo sanguíneo</label>													
+													<select class="form-control">
+														<option>O+</option>
+													</select>																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>É doador de sangue?</label>													
+												<div class="checkbox">												 
+													<input type="checkbox" class="bootstrap-switch" value="N">												  
+												</div>																										
+											</div>											
+										</div>									
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Grupos</label>													
+													<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Segmentos</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>									
+									</div>
+									<div class="row">
+										<div class="col-md-3 col-lg-3">
+											<div class="form-group">									
+												<label>Indicação</label>													
+													<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-3 col-lg-3">
+											<div class="form-group">									
+												<label>Assessor responsável</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										
+									</div>
+									<h3>Endereço</h3>
+									<div class="row">
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>CEP</label>													
+													<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Rua</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Número</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Complemento</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Bairro</label>													
+													<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Cidade</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+									</div>
+									<div class="row">									
+										<div class="col-md-4 col-lg-4">
+											<div class="form-group">									
+												<label>Subdistrito</label>													
+												<select class="form-control">
+														<option>Santa Cruz - PTB</option>
+													</select>																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Estado</label>													
+												<select class="form-control">
+														<option>Minas Gerais</option>
+													</select>																										
+											</div>
+										</div>
+										<div class="col-md-2 col-lg-2">
+											<div class="form-group">									
+												<label>Exibir mapa?</label>													
+												<div class="checkbox">
+												  <label>
+													<input type="checkbox" class="bootstrap-switch" id="btnMapa" value="Y" checked>
+												  </label>
+												</div>																										
+											</div>
+										</div>
+									</div>
+									<div class="row">									
+										<div class="col-md-12 col-lg-12" id="divMapa">
+											<div class="panel panel-default">                          
+											  <div class="panel-body">                           
+												  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7499.3386247426215!2d-44.14374665859963!3d-19.980404627285775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c24a5fb01f9b%3A0xdae51d9facff118f!2sBetim%2C+MG!5e0!3m2!1spt-BR!2sbr!4v1452517120488" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                             
+											  </div>
+											</div>
+										</div>										
+									</div>
+									<h3>Dados Profissionais</h3>
+									<div class="row">									
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Ocupação</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-6 col-lg-6">
+											<div class="form-group">									
+												<label>Instituição</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+									</div>
+									<h3>Emails</h3>
+									<div class="row">									
+										<div class="col-md-4 col-lg-4">
+											<div class="form-group">									
+												<label>Email principal</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-4 col-lg-4">
+											<div class="form-group">									
+												<label>Email secundário</label>													
+												<input type="text" class="form-control" placeholder="" >																										
+											</div>
+										</div>
+										<div class="col-md-4 col-lg-4">
+											<div class="form-group">									
+												<label style="display:block">Redes sociais</label>													
+												<div class="btn-group" role="group" aria-label="...">
+												  <button type="button" class="btn btn-default"><i class="fa fa-fw fa-facebook"></i></button>
+												  <button type="button" class="btn btn-default disabled"><i class="fa fa-fw fa-instagram"></i></button>
+												  <button type="button" class="btn btn-default disabled"><i class="fa fa-fw fa-google-plus"></i></button>
+												</div>																										
+											</div>
+										</div>
+									</div>
+									<h3>Telefones</h3>
+									<div class="row">									
+										<div class="col-md-4 col-lg-4">Número</div>										
+										<div class="col-md-2 col-lg-2">Tipo</div>
+										<div class="col-md-2 col-lg-2">Operadora</div>											
+									</div>
+									<div class="row">									
+										<div class="col-md-3 col-lg-3"><input type="text" class="form-control" placeholder="(31)" ></div>										
+										<div class="col-md-2 col-lg-2">
+											<select class="form-control">
+												<option>Fixo</option>
+											</select></div>
+										<div class="col-md-2 col-lg-2">
+											<select class="form-control">
+												<option>Oi</option>
+											</select>
+										</div>
+										<div class="col-md-5 col-lg-5"><button type="button" class="btn btn-danger"><i class="fa fa-fw fa-minus"></i></button></div>
+									</div>
+									<div class="row" style="margin-top:10px;">
+										<div class="col-md-12 col-lg-12">
+											<button type="button" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i> Adicionar telefone</button>
+										</div>
+									</div>
+									<div class="row" style="margin-top:10px;">
+										<div class="col-md-12 col-lg-12">
+											<label>Observações</label>	
+											<textarea class="form-control" rows="5"></textarea>
+										</div>
+									</div>
+									<div class="row" style="margin-top:10px;">
+										<div class="col-md-12 col-lg-12">
+											<a href="#" class="btn btn-primary"> Salvar </a>
+											<a href="#" class="btn btn-success"> Salvar e adicionar novo </a>
+											<a href="#" class="btn btn-default"> Cancelar </a>
+										</div>
+									</div>
+								</div>							
+							</div>
+							<div role="tabpanel" class="tab-pane" id="profile">...</div>
+							<div role="tabpanel" class="tab-pane" id="messages">...</div>
+							<div role="tabpanel" class="tab-pane" id="settings">...</div>
+						  </div>
+
+						</div>
+						
+       
+					</div>
+ 				</div>
+ 			</div><!-- /#wrapper -->
+    
+    
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-switch.min.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+     
+	$(".bootstrap-switch").bootstrapSwitch({
+		onText:"SIM",
+		offText:"NÃO"
+	});
+	
+	$("#btnMapa").on('switchChange.bootstrapSwitch', function(event, state){
+		if(state == true){
+			$("#divMapa").slideDown();
+		}else{
+			$("#divMapa").slideUp();
+		}
+	});
+	
+	// Data gathered from http://populationpyramid.net/germany/2015/
+$(function () {
+    // Age categories
+    var categories = ['0-4', '5-9', '10-14', '15-19',
+            '20-24', '25-29', '30-34', '35-39', '40-44',
+            '45-49', '50-54', '55-59', '60-64', '65-69',
+            '70-74', '75-79', '80-84', '85-89', '90-94',
+            '95-99', '100 + '];
+    $(document).ready(function () {
+        $('#chartIdade').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Pirâmide populacional'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: [{
+                categories: categories,
+                reversed: false,
+                labels: {
+                    step: 1
+                }
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    step: 1
+                }
+            }],
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    }
+                }
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                        'Populacao: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                }
+            },
+
+            series: [{
+                name: 'Homem',
+                data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
+                    -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
+                    -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
+            }, {
+                name: 'Mulher',
+                data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
+                    3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
+                    1.8, 1.2, 0.6, 0.1, 0.0]
+            }]
+        });
+    });
+
+});
+	
+	
+    </script>   
+    
+    <script type="text/javascript">
+    
+    vm = new Vue({	
+        el:"#loginApp",
+        data: {
+            loadingDevices: false,
+
+            options: {
+
+            },
+        },
+
+        ready: function() {
+
+        },
+
+        methods: {	
+
+
+        }
+
+    }); 
+    
+    </script>                                        
+</body>
+</html>
+

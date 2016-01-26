@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electo</title>
+	<link rel="stylesheet" href="bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css">          
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<style>
+	
+        #logo-img {
+            width:100px;
+            height: 30px;
+        }
+		
+        #menu-toggle {
+            position: absolute;
+            padding: 16px 5px;
+            color: #ffffff;
+        }
+		
+		.campaign-header {
+		  color: #333;
+		  font-size: 20px;
+		  
+		}
+		
+        .form-control {
+			background-color: #f9f9f9;
+		}
+		
+		table a:not(.btn), .table a:not(.btn) {
+			text-decoration: none;
+		}
+		table a:not(.btn):hover, .table a:not(.btn):hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>    
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>              
+                <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-ellipsis-h"></i></a>              
+              <a class="navbar-brand" href="/dashboard.html" style="padding: 10px; margin-left: 30px;"><img id="logo-img" src="/images/logo.svg" /></a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">				
+				<li class="dropdown menu-large">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></a>
+					
+					<ul class="dropdown-menu megamenu row">
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Tarefas</li>
+								<li><a href="/cidadaos-novo.html">Cadastrar novo Cidadão</a></li>                    
+								<li><a href="#">Cadastrar nova Instituição</a></li>
+								<li><a href="#">Cadastrar nova Demanda</a></li>
+								<li><a href="#">Criar novo Evento</a></li>
+								<li><a href="#">Enviar Email</a></li>
+								<li><a href="#">Enviar SMS</a></li>
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Cadastros</li>
+								<li><a href="#" class="nav-child">Cidadãos</a></li>
+								<li><a href="#">Lideranças</a></li>
+								<li><a href="#">Instituições</a></li>                    
+								<li class="divider"></li>
+								<li><a href="#">Segmentos e Grupos</a></li>							
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Gabinete</li>
+								<li><a href="#" class="nav-child">Demandas dos Cidadãos</a></li>
+								<li><a href="#">Tarefas internas</a></li> 
+								<li><a href="#">Minha Equipe</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Categorias de Demandas</a></li>								
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Comunicação</li>
+								<li><a href="#" class="nav-child">Agenda de Eventos</a></li>
+								<li><a href="#">Mural de recados</a></li>
+								<li><a href="#">Aniversariantes</a></li> 
+								<li><a href="#">Email</a></li>
+								<li><a href="#">Mensagens SMS</a></li>							
+							</ul>
+						</li>
+						<li class="col-sm-2" style="border-right: 1px solid #efefef;">
+							<ul>
+								<li class="dropdown-header">Relatórios</li>
+								<li><a href="#" class="nav-child">Estatísticas dos Cidadãos</a></li>
+								<li><a href="#">Demandas dos Cidadãos</a></li>
+								<li><a href="#">SMS/Emails enviados</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Controle de acesso</a></li>
+								<li><a href="#">Auditoria</a></li> 								
+							</ul>
+						</li>
+						<li class="col-sm-2">
+							<ul>
+								<li class="dropdown-header">Outros</li>
+								<li><a href="#">Pesquisas de opinião</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Duplicidade de Cadastros</a></li>
+								<li><a href="#">Importação de Cidadãos</a></li>
+								<li class="divider"></li>
+								<li><a href="ajuda.html" target="_new">Ajuda do Electo <span class="label bg-success">Novo</span></a></li>
+							</ul>
+						</li>
+					</ul>
+					
+				</li>				
+
+			</ul>
+			
+			
+			
+			
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<input type="text" class="form-control input-sm" placeholder="Localizar" style="margin-top:6px; width:220px">
+				</div>
+				<button type="submit" class="btn btn-default btn-sm" style="margin-top:6px">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#"><i class="fa fa-fw fa-bell-o"></i></a></li>
+					<li class="dropdown"><a href="ajuda.html"><i class="fa fa-fw fa-question-circle"></i></a></li>
+					<li class="dropdown" style="margin-right:20px">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="padding: 10px;">
+							<img src="images/profile.jpg" width="30" height="30">
+							<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Editar Perfil</a></li>
+							<li><a href="#">Minha conta</a></li>                                      
+							<li class="divider"></li>
+							<li><a href="#">Sair</a></li>
+						</ul>
+					</li> 
+				</ul>
+            </div>
+        </div>
+    </nav>
+    
+   
+   
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+			<div style="background-color: white; padding-top:20px;padding-bottom:20px;padding-left:10px;">
+				<p class="campaign-header"> Campanha atual <a href="#"><i class="fa fa-gear pull-right"></i></a></p>
+				<img src="images/medium_marley.jpg">
+				<p>Marley Adriano 54333<br/>
+				Vereador PPL</p>			
+			</div>            
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Cidadãos <span class="badge">1380</span></a>
+                <a href="#" class="list-group-item">Lideranças <span class="badge">45</span></a>
+                <a href="#" class="list-group-item">Instituições <span class="badge">22</span></a>
+				<a href="/cidadaos-novo.html" class="list-group-item">Cadastrar novo Cidadão</i></a>
+				<a href="#" class="list-group-item">Cadastrar nova Instituição</i></a>
+				<a href="#" class="list-group-item">Cadastrar nova Demanda</i></a>				
+				<a href="#" class="list-group-item">Criar novo evento</i></a>
+				<a href="#" class="list-group-item">Enviar E-mail</i></a>
+				<a href="#" class="list-group-item">Enviar SMS</i></a>
+            </div>           
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 col-lg-12">
+						<ul class="breadcrumb">
+							<li><a href="/dashboard.html">Dashboard</a>
+							<li><a href="#">Cadastros</a>
+							<li><a href="#">Cidadãos</a>
+						</ul>
+						<h2><i class="fa fa-fw fa-users"></i> Cidadãos</h2>  
+					</div>                
+				</div>                              
+                <div class="row">
+                    <div class="col-md-9 col-lg-9">
+						
+                        <a class="btn btn-success" href="/cidadaos-novo.html"><i class="fa fa-fw fa-plus"></i> Novo Cidadão</a>
+						<button class="btn btn-default"><i class="fa fa-fw fa-trash"></i> Excluídos</button>
+                    </div>	
+                    <div class="col-md-3 col-lg-3">
+                        <div class="input-group">
+							<input type="text" class="form-control" placeholder="Filtrar por">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="button"><i class="fa fa-fw fa-filter"></i></button>
+							</span>
+						</div>							
+					</div>				
+                </div>                
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+						<br />
+						<div class="btn-group campaign-header pull-right">
+						  <a href="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Exibir <span class="caret"></span>
+							
+						  </a>
+						  <ul class="dropdown-menu">
+							<li><a href="#"><input type="checkbox"> Assessor responsável</a></li>
+							<li><a href="#"><input type="checkbox"> Bairro</a></li>
+							<li><a href="#"><input type="checkbox"> Idade</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#"><input type="checkbox"> Destacar Status do voto</a></li>
+						  </ul>
+						</div>
+                        <table class="table table-striped">
+							<thead>
+								<tr>
+									<th width="1%" nowrap><a href="#" style="color:#333">Código <span class="caret"></span></a></th>
+									<th width="1%">&nbsp;</th>
+									<th><a href="#" style="color:#333">Nome</a></th>
+									<th><a href="#" style="color:#333">Telefones</a></th>
+									<th><a href="#" style="color:#333">Assessor responsável</a></th>
+									<th><a href="#" style="color:#333">Status do voto</a></th>
+									<th colspan="4">&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1706</td>
+									<td><i class="fa fa-fw fa-star"></i></td>
+									<td><a href="#">José Teixeira Neto</a></td>
+									<td><a href="skype:+553199449-1108">(31)99449-1108</a></td>
+									<td>Marley</td>
+									<td>Provavél</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+									</tr>
+								<tr>
+									<td>1705</td>
+									<td><i class="fa fa-fw fa-star"></i></td>
+									<td><a href="#" class="no-link">Julio Lins Jr</a></td>
+									<td>
+										<div class="dropdown">
+										  <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											(31)99449-1108
+											<span class="caret"></span>
+										  </a>
+										  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+											<li><a href="skype:+553199449-1108">(31)99449-1108</a></li>
+											<li><a href="skype:+553199744-5342">(31)99744-5342</a></li>											
+										  </ul>
+										</div>									
+									</td>
+									<td>Marley</td>
+									<td>Provavél</td>
+									<td width="1%"><a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-envelope-o"></i></td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1701</td>
+									<td>&nbsp;</td>
+									<td><a href="#">Geraldo Amancio Rodrigues</a></td>
+									<td><a href="skype:+5531994491108">(31)98854-5708</a></td>
+									<td>Marley</td>
+									<td>Provavél</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1700</td>
+									<td>&nbsp;</td>
+									<td><a href="#">João Geraldo Da Silva</a></td>
+									<td><a href="skype:+5531994491108">(31)98654-5700</a></td>
+									<td>Marley</td>
+									<td>Incerto</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1699</td>
+									<td>&nbsp;</td>
+									<td><a href="#">João Geraldino De Souza</a></td>
+									<td>&nbsp;</td>
+									<td>Marley</td>
+									<td>Incerto</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1698</td>
+									<td>&nbsp;</td>
+									<td><a href="#">Rosana Gomes Barbosa</a></td>
+									<td><a href="skype:+5531994491108">(31)98652-2702</a></td>
+									<td>Ricardo</td>
+									<td>Incerto</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1697</td>
+									<td>&nbsp;</td>
+									<td><a href="#">Lauricelia Gonçalves P. De Lima</a></td>
+									<td><a href="skype:+5531994491108">(31)98657-8704</a></td>
+									<td>Marley</td>
+									<td>Provavél</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1685</td>
+									<td><i class="fa fa-fw fa-star"></i></td>
+									<td><a href="#">João Henrique Alves Ribeiro</a></td>
+									<td><a href="skype:+5531994491108">(31)99244-5755</a></td>
+									<td>Marley</td>
+									<td>Provavél</td>
+									<td width="1%"><a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-envelope-o"></i></td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1694</td>
+									<td>&nbsp;</td>
+									<td><a href="#">Maisa Soares Da Silva Oliveira</a></td>
+									<td><a href="skype:+5531994491108">(31)98556-5603</a></td>
+									<td>Adriana</td>
+									<td>Incerto</td>
+									<td width="1%">&nbsp;</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								<tr>
+									<td>1692</td>
+									<td>&nbsp;</td>
+									<td><a href="#">Mariza Rosa Da Silva</a></td>
+									<td><a href="skype:+5531994491108">(31)98252-3677</a></td>
+									<td>Marley</td>
+									<td>Provavél</td>
+									<td width="1%"><a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-envelope-o"></i></td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-mobile"></i></a>
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-xs" style="background-color: #ccc; color: #333; border: 1px solid #999;"><i class="fa fa-fw fa-edit"></i></a>										
+									</td>
+									<td width="1%">
+										<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-fw fa-minus"></i></a>										
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						Exibindo cidadãos 1 - 10 de 1380
+						<nav>
+						  <ul class="pagination">
+							<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+							<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+							<li><a href="#">2 <span class="sr-only">2</span></a></li>
+							<li><a href="#">3 <span class="sr-only">2</span></a></li>
+							<li><a href="#">4 <span class="sr-only">2</span></a></li>
+							<li><a href="#">5 <span class="sr-only">2</span></a></li>
+							<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+							<li><a href="#" aria-label="Próximo"><span aria-hidden="true">Próximo</span></a></li>
+							<li><a href="#" aria-label="Último"><span aria-hidden="true">Último</span></a></li>
+						  </ul>
+						</nav>
+					</div>
+                </div>                 
+            </div>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+    
+    
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+     
+	
+	// Data gathered from http://populationpyramid.net/germany/2015/
+$(function () {
+    // Age categories
+    var categories = ['0-4', '5-9', '10-14', '15-19',
+            '20-24', '25-29', '30-34', '35-39', '40-44',
+            '45-49', '50-54', '55-59', '60-64', '65-69',
+            '70-74', '75-79', '80-84', '85-89', '90-94',
+            '95-99', '100 + '];
+    $(document).ready(function () {
+        $('#chartIdade').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Pirâmide populacional'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: [{
+                categories: categories,
+                reversed: false,
+                labels: {
+                    step: 1
+                }
+            }, { // mirror axis on right side
+                opposite: true,
+                reversed: false,
+                categories: categories,
+                linkedTo: 0,
+                labels: {
+                    step: 1
+                }
+            }],
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+                        return Math.abs(this.value) + '%';
+                    }
+                }
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
+                        'Populacao: ' + Highcharts.numberFormat(Math.abs(this.point.y), 0);
+                }
+            },
+
+            series: [{
+                name: 'Homem',
+                data: [-2.2, -2.2, -2.3, -2.5, -2.7, -3.1, -3.2,
+                    -3.0, -3.2, -4.3, -4.4, -3.6, -3.1, -2.4,
+                    -2.5, -2.3, -1.2, -0.6, -0.2, -0.0, -0.0]
+            }, {
+                name: 'Mulher',
+                data: [2.1, 2.0, 2.2, 2.4, 2.6, 3.0, 3.1, 2.9,
+                    3.1, 4.1, 4.3, 3.6, 3.4, 2.6, 2.9, 2.9,
+                    1.8, 1.2, 0.6, 0.1, 0.0]
+            }]
+        });
+    });
+
+});
+	
+	
+    </script>   
+    
+    <script type="text/javascript">
+    
+    vm = new Vue({	
+        el:"#loginApp",
+        data: {
+            loadingDevices: false,
+
+            options: {
+
+            },
+        },
+
+        ready: function() {
+
+        },
+
+        methods: {	
+
+
+        }
+
+    }); 
+    
+    </script>                                        
+</body>
+</html>
+
